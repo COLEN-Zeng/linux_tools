@@ -1,0 +1,18 @@
+#! /bin/bash
+# pm2 log
+QUERY=""
+if [[ $# -ne 0 ]]; then
+    QUERY="$1"
+fi
+target=$(
+    pm2 l |
+        awk '{print $4}' |
+        grep -E '[^(name)|\s+|(`pm2)]' |
+        fzf -m -q "${QUERY}" -1
+)
+
+if [ -n "${target}" ]; then
+    pm2 log ${target}
+fi
+
+# ln -s ./tools/pm2/pml /usr/bin/pml
