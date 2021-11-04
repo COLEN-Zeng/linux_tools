@@ -6,15 +6,15 @@
 
 ```sh
 #批量添加软链
-ln -s /home/colen/tools/config/* ~/
-# 单独
+ln -s $HOME/tools/config/* ~/
+
 #linux
-ln -s /home/colen/tools/config/.tmux.conf ~/.tmux.conf
-ln -s /home/colen/tools/config/.zshrc ~/.zshrc
+ln -s $HOME/tools/config/.tmux.conf ~/.tmux.conf
+ln -s $HOME/tools/config/.zshrc ~/.zshrc
 #develop tools
-ln -s /home/colen/tools/config/.vimrc ~/.vimrc
+ln -s $HOME/tools/config/.vimrc ~/.vimrc
 # node
-ln -s /home/colen/tools/config/.npmrc ~/.npmrc
+ln -s $HOME/tools/config/.npmrc ~/.npmrc
 ```
 
 ## ./ linux 和 windows 脚本

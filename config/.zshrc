@@ -1,8 +1,8 @@
 # export  PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-# /home/colen
-export ZSH="/home/colen/.oh-my-zsh"
+# $HOME
+export ZSH="$HOME/.oh-my-zsh"
 
 # ZSH_THEME="random" # 随机主题 https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
