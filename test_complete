@@ -1,0 +1,18 @@
+# [Shell脚本参数自动补全](https://blog.csdn.net/Q1302182594/article/details/52344503)
+# [compgen命令](https://www.linuxcool.com/compgen)
+# [complete命令 – 自动补全声明](https://www.linuxcool.com/complete)
+# [linux shell中的命令自动补全（compgen complete）与 命令行参数解析](https://blog.csdn.net/crylearner/article/details/17721615?spm=1001.2101.3001.6650.1&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-1.no_search_link&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-1.no_search_link)
+complete -F test_complete_func test.sh
+
+test_complete_func() {
+    local cur prev opts
+    COMPREPLY=()
+    cur="${COMP_WORDS[COMP_CWORD]}"
+    prev="${COMP_WORDS[COMP_CWORD - 1]}"
+    opts="help usage version"
+
+    if [[ ${cur} == * ]]; then
+        COMPREPLY=($(compgen -W "${opts}" -- ${cur}))
+        return 0
+    fi
+}

@@ -1,0 +1,20 @@
+.DS_Store
+node_modules
+dist
+
+# log
+.log*
+
+# 编辑器配置
+.idea
+.vscode
+
+# prettierrc
+.prettierrc
+.prettierignore
+
+# git忽略文件
+.gitignore
+
+# 不对markdown进行格式化, 容易打乱自己编排的样式
+*.md

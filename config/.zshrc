@@ -20,9 +20,9 @@ ZSH_THEME="robbyrussell"
 # DISABLE_LS_COLORS="true" # disable colors in ls.
 # DISABLE_AUTO_TITLE="true" # disable auto-setting terminal title.
 
-# ENABLE_CORRECTION="true" # 命令自动纠错	
+# ENABLE_CORRECTION="true" # 命令自动纠错
 
-# 
+#
 # COMPLETION_WAITING_DOTS="true" # 等待完成时显示红点(可能导致多行提示问题 5.7.1之后可以工作https://github.com/ohmyzsh/ohmyzsh/issues/5765)
 
 # Uncomment the following line if you want to disable marking untracked files
@@ -38,13 +38,13 @@ HIST_STAMPS="yyyy-mm-dd" # 可选三种格式之一: "mm/dd/yyyy"|"dd.mm.yyyy"|"
 # 标准插件可以 $ZSH/plugins/
 # 自定义插件 $ZSH_CUSTOM/plugins/
 plugins=(
-git
-sudo
-z
-jump
-# zsh-syntax-highlighting
-# fast-syntax-highlighting
-zsh-autosuggestions
+    git
+    sudo
+    z
+    jump
+    # zsh-syntax-highlighting
+    # fast-syntax-highlighting
+    zsh-autosuggestions
 )
 
 # User configuration
@@ -75,7 +75,6 @@ bindkey ',' autosuggest-accept #  → 补全不方便，自定义补全的快捷
 
 source $ZSH/oh-my-zsh.sh
 
-
 # 依赖
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 alias proxy="source ~/tools/proxy.sh"
@@ -85,3 +84,8 @@ export NODEJS_HOME=/usr/local/bin/node-v14.18.1-linux-x64
 export PATH=${NODEJS_HOME}/bin:${PATH}
 
 alias python=python3
+
+#将~/tools下的命令作为环境变量
+export PATH=$PATH:~/tools
+
+export WORKPLACE=$HOME/project
