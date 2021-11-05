@@ -1,0 +1,91 @@
+{
+    "env": {
+        "es6": true,
+        "node": true,
+        "mocha": true
+    },
+    "extends": [
+        "eslint-config-egg",
+        "prettier",
+        "plugin:prettier/recommended" // 自动格式化：https://github.com/prettier/eslint-plugin-prettier
+    ],
+    "parserOptions": {
+        "ecmaVersion": 10
+    },
+    // 全局变量
+    "globals": {},
+    "rules": {
+        // 缩进使用了prettier默认的配置
+        // "indent": ["error", 4],
+        // "indent": [
+        //     "error",
+        //     4,
+        //     {
+        //         "SwitchCase": 1,
+        //         "ignoredNodes": ["ConditionalExpression"],
+        //         "ArrayExpression": 4
+        //     }
+        // ],
+        "linebreak-style": ["error", "unix"],
+        // 强制单引号
+        // "quotes": [
+        // "error",
+        // "single"
+        // ],
+        // 强制使用分号结尾
+        "semi": ["error", "always"],
+        "no-console": "error",
+        // 定义了未使用的变量,建议打开
+        // "no-unused-vars": ["error", { "vars": "local", "args": "after-used" }],
+        // 用let或const替代var
+        "no-var": "error",
+        // 不允许对const创建的变量重新赋值
+        "no-const-assign": "error",
+        // 一行结束后面不要空格
+        "no-trailing-spaces": "error",
+        // 注释前必须有空格 例：// 注释
+        "spaced-comment": "error",
+        // 三元表达式跨越多个行的操作数之间强制换行
+        "multiline-ternary": ["error", "always-multiline"],
+        // 单行的最大长度
+        "max-len": [
+            "error",
+            {
+                "code": 160
+            }
+        ],
+        "no-bitwise": "off",
+        "no-magic-numbers": [
+            "error",
+            {
+                "ignore": [0, 1, -1, 200, 400, 401, 403, 404, 411, 500],
+                "ignoreArrayIndexes": true,
+                "enforceConst": true,
+                "detectObjects": false
+            }
+        ],
+        // 一行声明一个变量
+        "one-var-declaration-per-line": "error",
+        "no-empty": "off",
+        "no-empty-function": "off",
+        "block-spacing": ["error", "always"],
+        "space-before-function-paren": "off",
+        "array-bracket-spacing": "off",
+        // 条件中不允许常量表达式
+        "no-constant-condition": [
+            "error",
+            {
+                "checkLoops": false
+            }
+        ]
+    },
+    "overrides": [
+        {
+            "files": ["test/**/*.js"],
+            "rules": {
+                "no-magic-numbers": "off",
+                "strict": "off"
+            }
+        }
+    ]
+}
